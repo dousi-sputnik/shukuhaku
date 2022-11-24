@@ -1,0 +1,39 @@
+<div class="bg-img">
+  <div class="container" id="top-padding">
+    <div class="col bg-light text-center p-4 p-sm-5 my-4 rounded">
+      <h1 class="display-5" id="top-dis">Potepan Shareでまだ体験したことのない旅をしよう</h1>
+      <hr class="my-4">
+      <%= link_to "Sign Up!", root_path, class: "btn btn-success btn-lg" %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="display-6 mt-5" id="top-dis">おすすめのエリア</p>
+    <div class="col-sm-6 col-md-3 card" id="top-card">
+      <img class="img-fluid mt-4 card-img" src="<%= asset_pack_path 'media/images/tokyo.jpg' %>" >
+      <div class="card-img-overlay">
+        <p class="display-3 text-white" id="top-card-p">東京</p>
+      </div>
+  　</div>
+    <div class="col-sm-6 col-md-3 card" id="top-card">
+      <img class="img-fluid mt-4 card-img" src="<%= asset_pack_path 'media/images/osaka.jpg' %>" >
+      <div class="card-img-overlay">
+        <p class="display-3 text-white" id="top-card-p">大阪</p>
+      </div>
+　  </div>
+    <div class="col-sm-6 col-md-3 card" id="top-card">
+      <img class="img-fluid mt-4 card-img" src="<%= asset_pack_path 'media/images/kyoto.jpg' %>" >
+      <div class="card-img-overlay">
+        <p class="display-3 text-white" id="top-card-p">京都</p>
+      </div>
+　    </div>
+    <div class="col-sm-6 col-md-3 card" id="top-card">
+      <img class="img-fluid mt-4 card-img" src="<%= asset_pack_path 'media/images/sapporo.jpg' %>" >
+      <div class="card-img-overlay">
+        <p class="display-3 text-white" id="top-card-p">札幌</p>
+      </div>
+    </div>
+  </div>
+</div>
