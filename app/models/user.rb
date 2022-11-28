@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  before_save { self.email = email.downcase }
+  mount_uploader :profile_image, ImageUploader
   validates :username, presence: true,
                        uniqueness: { case_sensitive: false },
                        length: { minimum: 1, maximum: 15 }
@@ -7,5 +9,10 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false },
                     length: { maximum: 105 },
                     format: { with: VALID_EMAIL_REGEX }
-  validates :introduction, length:{ minimum: 4, maximum: 300 }
+  validates :introduction, length:{ minimum: 4, maximum: 300 },
+                            allow_nil: true
+  has_secure_password
+  validates :password, length: { minimum: 7 },
+                       confirmation: true
+  validates :password_confirmation, presence: true
 end
