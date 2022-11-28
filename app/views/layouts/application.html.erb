@@ -11,8 +11,11 @@
   </head>
 
   <body>
-    <%= render 'layouts/nav' %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
+    <div class="footerFixed">
+      <%= render 'layouts/nav' %>
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
