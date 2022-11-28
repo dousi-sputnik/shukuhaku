@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'rooms/index'
+  get 'rooms/new'
+  get 'rooms/search'
+  get 'rooms/show'
   get 'sessions/new'
   root 'pages#top'
   get "signup", to: 'users#new'
