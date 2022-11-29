@@ -1,13 +1,14 @@
-<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 bg-dark">
-  <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5">   
-    <% if @room.room_image? %>
-      <%= image_tag room.room_image.url, :sise =>'400x300' %>
-    <% else %>
-      <%= image_tag "default_room.jpg", alt: "メニュー", :size =>'400x300' %>
-    <% end %>
-  </div>  
+<div class="container sample">
+  <div class="row">
+    <div class="col mt-4">
+      <% if @room.room_image? %>
+        <%= image_tag room.room_image.url %>
+      <% else %>
+        <%= image_tag "default_room.jpg", alt: "メニュー", :size =>'500x300' %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
 
 <!--
 <% if @room.room_image? %>
