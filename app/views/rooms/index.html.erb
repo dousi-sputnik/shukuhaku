@@ -1,2 +1,38 @@
-<h1>Rooms#index</h1>
-<p>Find me in app/views/rooms/index.html.erb</p>
+
+<!--
+<div class="room">
+	<div class="room-box">
+		<div class="room-title">
+			<h2>登録済みルーム</h2>
+			<div>
+				<table class="room-table">
+					<thead class="room-thead">
+						<tr>
+							<th class="th-image">ルーム画像</th>
+							<th class="th-name">ルーム名</th>
+							<th class="th-intro">ルーム紹介</th>
+							<th class="th-fee">料金</th>
+							<th class="th-created">作成日</th>
+							<th class="th-delete"></th>
+						</tr>
+					</thead>
+					<tbody class="room-tbody">
+						<% unless @rooms == nil %>
+							<% @rooms.each do |room| %>
+								<tr>
+                  <td class="room-image-box"><%= link_to image_tag(room.room_image.url, class: "registered-image"), room %></td>
+									<td class="room-name"><%= link_to room.room_name, room %></td>
+									<td class="room-intro"><%= room.description %></td>
+									<td class="room-fee"><%= room.fee %></td>
+									<td class="room-created"><%= room.created_at .to_s(:datetime_jp) %></td>
+									<td class="room-delete"><%= link_to "削除", room, method: :delete, data:{confirm: "本当に削除しますか?"}, class:"delete" %>
+								</tr>
+							<% end %>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+-->
