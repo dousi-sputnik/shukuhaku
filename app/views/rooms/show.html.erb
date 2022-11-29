@@ -1,2 +1,18 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 bg-dark">
+  <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5">   
+    <% if @room.room_image? %>
+      <%= image_tag room.room_image.url, :sise =>'400x300' %>
+    <% else %>
+      <%= image_tag "default_room.jpg", alt: "メニュー", :size =>'400x300' %>
+    <% end %>
+  </div>  
+</div>
+
+
+<!--
+<% if @room.room_image? %>
+  <%= image_tag room.room_image.url %>
+<% else %>
+  <%= image_tag "default_room.jpg", alt: "メニュー", :size =>'300x300' %>
+<% end %>
+-->

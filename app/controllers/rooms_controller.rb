@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
     if @room.save
       flash[:notice] = "ルーム情報を新規登録しました"
-      redirect_to rooms_path
+      redirect_to room_path(@room)
     else
       render "new"
     end
@@ -22,6 +22,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @room = Room.find(params[:id])
   end
 
   private
