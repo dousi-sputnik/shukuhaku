@@ -12,11 +12,11 @@
 		</thead>
 		<tbody>
 			<% @rooms.each do |room| %>
-				<tr>
-					<% if @room.room_image? %>
-						<td><%= link_to image_tag(room.room_image.url, size =>'50x50'), room %></td>
+				<tr class="border-top">
+					<% if room.room_image? %>
+						<td><%= link_to image_tag(room.room_image.url, size:'50x50'), room %></td>
 					<% else %>
-						<td><%= link_to image_tag(default_room.jpg, size =>'50x50'), room %></td>
+						<td><%= link_to image_tag("default_room.jpg", size:'50x50'), room %></td>
 					<% end %>
 					<td><%= link_to room.room_name, room %></td>
 					<td><%= room.description %></td>
