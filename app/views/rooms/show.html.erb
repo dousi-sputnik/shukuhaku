@@ -7,22 +7,33 @@
         <% else %>
           <%= image_tag "default_room.jpg", alt: "メニュー", :size =>'600x400' %>
         <% end %>
+        <div class="row bg-white border-top border-2">
+          <div class="col-4 col-2-md border-end">
+            <span class="fw-bold"><%= @room.room_name %></span></br>
+            <span><%= @room.address %></span>
+          </div>
+          <div class="col-8 col-4-md">
+            <p><%= @room.description %></p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 p-3">
-        <div class="row bg-white border-top border-2">
-          <div class="col-4 border-end">
-            <span class="fw-bold"><%= @room.room_name %></span></br>
-            <span><%= @room.address %></span>
-          </div>
-          <div class="col-8">
-            <p><%= @room.description %></p>
+        <div class="row">
+          <div class="col-10 bg-whihe">
+            <%= form_with(model: @room, class: "shadow p-3 mb-3 bg-light rounded", local: true) do |f| %>
+              <h5 class="text-start mt-4"><%= @room.fee %> / 日</h5>
+              <div class="row mb-3 mt-3">
+                <%= f.label :room_name, "ルーム名", class: "col-2 col-form-label text-dark" %></br>
+                <div class="col-10">
+                  <%= f.text_field :room_name, class: "form-control shadow rounded", placeholder: "ルーム名を入力" %>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
-        <p class="lead">And an even wittier subheading.</p>
       </div>
-      <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
     </div>
   </div>
 </div>

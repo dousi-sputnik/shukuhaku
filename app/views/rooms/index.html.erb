@@ -1,38 +1,29 @@
-
-<!--
-<div class="room">
-	<div class="room-box">
-		<div class="room-title">
-			<h2>登録済みルーム</h2>
-			<div>
-				<table class="room-table">
-					<thead class="room-thead">
-						<tr>
-							<th class="th-image">ルーム画像</th>
-							<th class="th-name">ルーム名</th>
-							<th class="th-intro">ルーム紹介</th>
-							<th class="th-fee">料金</th>
-							<th class="th-created">作成日</th>
-							<th class="th-delete"></th>
-						</tr>
-					</thead>
-					<tbody class="room-tbody">
-						<% unless @rooms == nil %>
-							<% @rooms.each do |room| %>
-								<tr>
-                  <td class="room-image-box"><%= link_to image_tag(room.room_image.url, class: "registered-image"), room %></td>
-									<td class="room-name"><%= link_to room.room_name, room %></td>
-									<td class="room-intro"><%= room.description %></td>
-									<td class="room-fee"><%= room.fee %></td>
-									<td class="room-created"><%= room.created_at .to_s(:datetime_jp) %></td>
-									<td class="room-delete"><%= link_to "削除", room, method: :delete, data:{confirm: "本当に削除しますか?"}, class:"delete" %>
-								</tr>
-							<% end %>
-						<% end %>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
+<div class="container-fiuld">
+	<h4 class="pb-4">登録済みルーム一覧</h4>
+	<table>
+		<thead>
+			<tr align="center">
+				<th>ルーム画像</th>
+				<th>ルーム名</th>
+				<th>ルーム紹介</th>
+				<th>料金</th>
+				<th>作成日</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @rooms.each do |room| %>
+				<tr>
+					<% if @room.room_image? %>
+						<td><%= link_to image_tag(room.room_image.url, size =>'50x50'), room %></td>
+					<% else %>
+						<td><%= link_to image_tag(default_room.jpg, size =>'50x50'), room %></td>
+					<% end %>
+					<td><%= link_to room.room_name, room %></td>
+					<td><%= room.description %></td>
+					<td><%= room.fee %></td>
+					<td><%= room.created_at .to_s(:datetime_jp) %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 </div>
--->

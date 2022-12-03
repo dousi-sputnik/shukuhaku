@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   def index
-    @user = current_user
-    @rooms = current_user.rooms
+    @user = User.all
+    @rooms = Room.all
   end
 
   def new
