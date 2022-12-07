@@ -88,3 +88,28 @@ footer{
   width: 100px;
   height: 100px;
 }
+
+
+/* 以下 room 関連 */
+
+.search-room-image {
+  position: relative;
+  width: 100%;
+  background: #F6F8F9;
+  height: 200px;
+}
+
+.col-room {
+  border: 1px solid #e2e2e2;
+  margin-bottom: 10px;
+}
+
+.room {
+  width: 100%;
+  padding: 30px 60px;
+}
+
+.room-profile {
+  width: 100%;
+  padding: 15px;
+}

@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
   before_action :configure_permitted_parameters , if: :devise_controller?
+  before_action :set_q_for_room
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -17,6 +18,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def set_q_for_room
+    @q_header = Room.ransack(params[:q])
+  end
   private
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:profile_image])

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
-  resources :rooms
-  get "search", to: "rooms#search"
+  resources :rooms do
+    collection do
+      get 'search'
+    end
+  end
 end

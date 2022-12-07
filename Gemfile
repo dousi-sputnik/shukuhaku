@@ -45,6 +45,7 @@ group :development do
   gem 'devise'
   gem 'carrierwave', '~> 2.0'
   gem 'mini_magick'
+  gem 'ransack'
 end
 
 group :test do
