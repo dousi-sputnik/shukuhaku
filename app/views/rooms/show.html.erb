@@ -7,6 +7,13 @@
         <% else %>
           <%= image_tag "default_room.jpg", alt: "メニュー", :size =>'600x400' %>
         <% end %>
+
+        <% if @user.profile_image.present? %>
+          <%= image_tag @user.profile_image.url, :size => '65x65' %> 
+        <% else %>
+          <%= image_tag "/assets/default.png", :size => '65x65' %> 
+        <% end %>
+        
         <div class="row bg-white border-top border-2">
           <div class="col-4 col-2-md border-end">
             <span class="fw-bold"><%= @room.room_name %></span></br>

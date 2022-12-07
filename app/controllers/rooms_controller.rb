@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   before_action :set_q, only: [:index, :search]
 
   def index
-    @user = User.all
+    @user = User.find(current_user.id)
     @rooms = Room.all
   end
 
@@ -12,6 +12,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
+    @room.user_id = current_user.id
     if @room.save
       flash[:notice] = "ルーム情報を新規登録しました"
       redirect_to room_path(@room)
@@ -29,6 +30,7 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    @user = @room.user
   end
 
   private
