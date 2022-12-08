@@ -113,3 +113,28 @@ footer{
   width: 100%;
   padding: 15px;
 }
+
+.room-image {
+  width: 100%;
+}
+
+.room-show {
+  display: flex;
+  flex-direction: row;
+  margin: 0 80px;
+}
+
+.field_room {
+  border-bottom: solid 1px rgb(237, 233, 233);
+  padding: 20px 0;
+  display: flex;
+}
+
+.room_profile_image {
+  padding-right: 20px;
+}
+
+.room_name {
+  font-size: 18px;
+  font-weight: bold;
+}

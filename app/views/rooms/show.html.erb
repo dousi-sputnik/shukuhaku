@@ -1,24 +1,24 @@
-<div class="content bg-light" >
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+<div class="bg-light" >
+  <div class="room_show w-100 my-md-3 ps-md-3">
+    <div class="container me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
         <% if @room.room_image? %>
-          <%= image_tag @room.room_image.url %>
+          <%= image_tag @room.room_image.url, class: "room-image" %>
         <% else %>
-          <%= image_tag "default_room.jpg", alt: "メニュー", :size =>'600x400' %>
+          <%= image_tag "default_room.jpg", alt: "メニュー", class: "room-image" %>
         <% end %>
 
-        <% if @user.profile_image.present? %>
-          <%= image_tag @user.profile_image.url, :size => '65x65' %> 
-        <% else %>
-          <%= image_tag "/assets/default.png", :size => '65x65' %> 
-        <% end %>
-        
-        <div class="row bg-white border-top border-2">
-          <div class="col-4 col-2-md border-end">
-            <span class="fw-bold"><%= @room.room_name %></span></br>
-            <span><%= @room.address %></span>
+        <div class = "field_room" >
+          <div class = "room_profile_image">
+            <% if @user.profile_image.present? %>
+              <%= image_tag @user.profile_image.url, :size => '65x65', class: "rounded" %> 
+            <% else %>
+              <%= image_tag "/assets/default.png", :size => '65x65', class: "rounded" %> 
+            <% end %>
           </div>
+          <p class="room_name"><%= @room.room_name %></p>
+          <p>住所：<%= @room.address %></p>
+        </div>
           <div class="col-8 col-4-md">
             <p><%= @room.description %></p>
           </div>
