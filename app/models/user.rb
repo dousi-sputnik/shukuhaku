@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   before_save { self.email = email.downcase }
   has_many :rooms
-
+  has_many :bookings, dependent: :destroy
+  
   mount_uploader :profile_image, ImageUploader
   validates :username, presence: true,
                        uniqueness: { case_sensitive: false },

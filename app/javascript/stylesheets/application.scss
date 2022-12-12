@@ -74,49 +74,73 @@ footer {
 
 /* 以下 room 関連 */
 
-.search-room-image {
-  position: relative;
-  width: 100%;
-  background: #F6F8F9;
-  height: 200px;
-}
-
-.col-room {
-  border: 1px solid #e2e2e2;
-  margin-bottom: 10px;
-}
-
 .room {
   width: 100%;
   padding: 30px 60px;
 }
 
-.room-profile {
-  width: 100%;
-  padding: 15px;
+.room_show_detile {
+  display: flex;
+  align-items: center;
 }
 
-.room-image {
+.room_show_detile_icon {
+  padding: 10px;
+}
+
+.room-show-image {
   width: 100%;
+  object-fit: cover;
 }
 
 .room-show {
-  display: flex;
-  flex-direction: row;
-  margin: 0 80px;
+  padding: 30px 0;
 }
 
-.field_room {
-  border-bottom: solid 1px rgb(237, 233, 233);
-  padding: 20px 0;
-  display: flex;
+.room_user_icon {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 50px;
 }
 
-.room_profile_image {
-  padding-right: 20px;
+.room_show_profile {
+  padding: 15px;
 }
 
-.room_name {
+.room_show_profile_name {
   font-size: 18px;
   font-weight: bold;
+  padding: 15px 0;
+}
+
+.room_show_profile_address {
+  font-size: 14px;
+}
+
+.room_show_detile_description {
+  font-size: 16px;
+  line-height: 30px;
+  padding: 30px 10px;
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+  word-break: break-all;
+}
+
+.room_show_nav {
+  padding: 20px;
+  border: 1px solid #eaedef;
+  width: 300px;
+}
+
+.room_show_date_select {
+  padding: 15px 0;
+}
+
+/* book関連 */
+
+.book_new_check_descript {
+  border-bottom: 1px solid #eaedef;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
 }
