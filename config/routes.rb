@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :books
+  resources :bookings
   get 'sessions/new'
   root 'pages#top'
   get "signup", to: 'users#new'
