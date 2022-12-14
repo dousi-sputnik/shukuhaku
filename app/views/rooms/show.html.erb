@@ -4,7 +4,7 @@
       <% if @room.room_image? %>
         <%= image_tag @room.room_image.url, class: "room-show-image" %>
       <% else %>
-        <%= image_tag "default_room.jpg", alt: "メニュー", class: "room-show-image" %>
+        <%= image_tag "default_room.jpg", alt: "メニュー", class: "room-show-image-default" %>
       <% end %>
 
       <div class="room_show_detile" >
@@ -26,7 +26,7 @@
       <div class="room_show_nav">
       <h5 class="text-start mt-3">¥ <%= @room.fee %> / 日</h5>
         <div class="room_show_date_select">
-          <%= form_with(model: @booking, method: :get, url: new_book_path(@booking), class: "shadow p-3 mb-3 bg-light rounded", local: true) do |f| %>
+          <%= form_with(model: @booking, method: :get, url: new_booking_path(@booking), class: "shadow p-3 mb-3 bg-light rounded", local: true) do |f| %>
             <%= f.hidden_field :room_id, value: @room.id %>
             <%= f.hidden_field :user_id, value: current_user.id %>
 

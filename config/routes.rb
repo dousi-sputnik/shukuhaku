@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'bookings/index'
-  get 'bookings/new'
-  get 'bookings/show'
   resources :bookings
   get 'sessions/new'
   root 'pages#top'
