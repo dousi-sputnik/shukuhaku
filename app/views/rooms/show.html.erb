@@ -27,6 +27,15 @@
       <h5 class="text-start mt-3">¥ <%= @room.fee %> / 日</h5>
         <div class="room_show_date_select">
           <%= form_with(model: @booking, method: 'post', url: confirm_bookings_path, class: "shadow p-3 mb-3 bg-light rounded", local: true) do |f| %>
+            <% if @booking.errors.any? %>
+              <div class = "alert">
+                <ul>
+                  <% @booking.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
             <%= f.hidden_field :room_id, value: @room.id %>
             <%= f.hidden_field :user_id, value: current_user.id %>
 
