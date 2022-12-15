@@ -1,15 +1,14 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @user = User.find(current_user.id)
+    @bookings = @user.bookings 
+    if @bookings.present?
+      @booking = current_user.bookings.last
+      @room = @booking.room
+    end
   end
 
   #def new
-  #  @room = Room.find(params[:booking][:room_id])
-  #  @booking = Booking.new(booking_params)
-  #  @days = (@booking.end_date - @booking.start_date).to_i
-  #  @booking.total_price = (@room.fee * @booking.person * @days).to_i
-  #  @booking.user_id = current_user.id
-  #  @booking.room_id = @room.id
   #end
 
   def create

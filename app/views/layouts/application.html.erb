@@ -12,12 +12,12 @@
   </head>
 
   <body>
-      <p class="flash-text"><%= flash.notice %></p>
-			<p class="flash-text"><%= flash.alert %></p>
       <%= render 'layouts/nav' %>
       <%= render 'layouts/messages' %>
+  
       <%= yield %>
-
+      <p class="flash-text"><%= flash.notice %></p>
+			<p class="flash-text"><%= flash.alert %></p>
       <footer>
         <p>2023 POTEPAN.INC.</p>
       </footer>
