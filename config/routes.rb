@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :bookings
+  resources :bookings, only: [:index, :new, :create, :show] do
+    collection do
+      post :confirm
+    end
+  end
+  
   get 'sessions/new'
   root 'pages#top'
   get "signup", to: 'users#new'

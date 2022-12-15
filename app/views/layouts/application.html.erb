@@ -12,6 +12,8 @@
   </head>
 
   <body>
+      <p class="flash-text"><%= flash.notice %></p>
+			<p class="flash-text"><%= flash.alert %></p>
       <%= render 'layouts/nav' %>
       <%= render 'layouts/messages' %>
       <%= yield %>
